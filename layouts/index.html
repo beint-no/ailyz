@@ -1,58 +1,194 @@
 {{ define "main" }}
   {{ partial "hero.html" . }}
 
-  <section class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-stretch justify-around gap-8 text-center md:text-left">
-    <div class="max-w-sm md:max-w-xs bg-white rounded-xl p-6 shadow-lg ring-1 ring-indigo-100 transition hover:shadow-xl hover:-translate-y-0.5 h-full min-h-[220px] flex flex-col">
-      <h2 class="text-2xl md:text-3xl font-semibold">Autonomous agents</h2>
-      <p class="text-gray-700 mt-2" style="display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Let AI do the work! Agents are software systems that use AI to pursue goals and complete tasks</p>
+  <!-- Features Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-6">
+      <div class="group rounded-2xl bg-white p-6 shadow-md ring-1 ring-gray-100 hover:shadow-lg transition">
+        <div class="h-10 w-10 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-semibold">A+</div>
+        <h2 class="mt-4 text-xl md:text-2xl font-semibold">Answers + actions</h2>
+        <p class="text-gray-700 mt-2">Pre-generated replies and actions for every ticket. Agents just review and accept.</p>
+      </div>
+      <div class="group rounded-2xl bg-white p-6 shadow-md ring-1 ring-gray-100 hover:shadow-lg transition">
+        <div class="h-10 w-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-semibold">Tx</div>
+        <h2 class="mt-4 text-xl md:text-2xl font-semibold">Translate everything</h2>
+        <p class="text-gray-700 mt-2">Your team reads in English; customers get replies in their native language automatically.</p>
+      </div>
+      <div class="group rounded-2xl bg-white p-6 shadow-md ring-1 ring-gray-100 hover:shadow-lg transition">
+        <div class="h-10 w-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-semibold">∞</div>
+        <h2 class="mt-4 text-xl md:text-2xl font-semibold">Integrations</h2>
+        <p class="text-gray-700 mt-2">Works with Shopify, Gmail, Webshipper and more to automate your workflows.</p>
+      </div>
     </div>
-    <div class="max-w-sm md:max-w-xs bg-white rounded-xl p-6 shadow-lg ring-1 ring-indigo-100 transition hover:shadow-xl hover:-translate-y-0.5 h-full min-h-[220px] flex flex-col">
-      <h2 class="text-2xl md:text-3xl font-semibold">Human in the loop</h2>
-      <p class="text-gray-700 mt-2" style="display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">We know some tasks still need a "human in the loop" for the forseeable future, and develop our applications with that in mind.</p>
-    </div>
-    <div class="max-w-sm md:max-w-xs bg-white rounded-xl p-6 shadow-lg ring-1 ring-indigo-100 transition hover:shadow-xl hover:-translate-y-0.5 h-full min-h-[220px] flex flex-col">
-      <h2 class="text-2xl md:text-3xl font-semibold">Efficiency</h2>
-      <p class="text-gray-700 mt-2" style="display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Every second matter. Every bit and byte matters. Resulting in lower costs and faster software</p>
     </div>
   </section>
 
-  <section>
-    <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 bg-white rounded-2xl p-6 md:p-10 shadow-lg ring-1 ring-sky-100 border-t-4 border-sky-400 transition hover:shadow-xl hover:-translate-y-0.5">
-      <div class="flex items-center justify-center md:justify-start">
-        <a href="https://ailyz.com" class="select-none" aria-label="Ailyz">
-          {{ $logo := "/images/ailyz-logo.svg" }}
-          {{ with .Site.Params.allyzLogo }}
-            {{ $logo = . }}
-          {{ end }}
-          <img src="{{ $logo | relURL }}?v={{ now.Unix }}" alt="Allyz logo" class="h-40 md:h-48 lg:h-56 object-contain" loading="lazy" />
-        </a>
+  <!-- Blog Section -->
+  <section id="blog" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Latest news in AI</h2>
       </div>
-      <div>
-        <h2 class="text-2xl md:text-3xl font-semibold">Ailyz: AI first customer service</h2>
-        <p class="text-gray-700 mt-2">We integrate with Gmail, Shopify, Webshipper and other systems you use to pre-generate answers and actions to your customers' emails. The only thing the customer service agent has to do is accept the answer/action.</p>
-        <a href="https://ailyz.com" class="inline-flex items-center justify-center mt-4 rounded-md bg-sky-600 text-white px-6 py-3 font-medium hover:bg-sky-700 transition">Learn more</a>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Predictive Customer Support -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <a href="/blogs/ai/predictive-customer-support/" class="block h-full">
+            <div class="h-48 bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Predictive Customer Support</h3>
+              <p class="text-gray-600 mb-4 line-clamp-3">Discover how AI is transforming customer service with predictive support that identifies and resolves issues before customers even report them.</p>
+              <span class="inline-flex items-center text-indigo-600 font-medium">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Future of AI Customer Service -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <a href="/blogs/ai/future-of-ai-customer-service/" class="block h-full">
+            <div class="h-48 bg-gradient-to-r from-purple-100 to-pink-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Future of AI Customer Service</h3>
+              <p class="text-gray-600 mb-4 line-clamp-3">Explore the cutting-edge innovations shaping the next generation of AI-powered customer service and support experiences.</p>
+              <span class="inline-flex items-center text-indigo-600 font-medium">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Automated Translation -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <a href="/blogs/ai/automated-translation/" class="block h-full">
+            <div class="h-48 bg-gradient-to-r from-cyan-100 to-blue-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Automated Translation</h3>
+              <p class="text-gray-600 mb-4 line-clamp-3">Learn how automated translation is breaking down language barriers and enabling seamless global customer support experiences.</p>
+              <span class="inline-flex items-center text-indigo-600 font-medium">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <!-- Ailyz Info Section -->
+  <section class="py-16 relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-br from-white to-blue-50"></div>
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100 to-transparent opacity-50"></div>
+      <div class="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-indigo-100 opacity-50"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 relative">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <!-- Content -->
+        <div class="lg:col-span-7 lg:order-1">
+          <div class="relative">
+            <!-- Decorative element -->
+            <div class="absolute -top-6 -left-6 w-12 h-12 bg-blue-100 rounded-full opacity-70"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+              <span class="relative">
+                Ailyz: <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">AI customer service</span> for Shopify
+                <span class="absolute bottom-1 left-0 w-full h-3 bg-blue-100 rounded-full -z-10 opacity-50"></span>
+              </span>
+            </h2>
+            
+            <div class="mt-6 space-y-4 text-gray-700">
+              <p>Ailyz pre-generates answers and actions for your tickets and emails. We integrate with Shopify, Gmail, Webshipper and more. Agents review and accept. All messages are translated to English; customers receive replies in their native language.</p>
+            </div>
+            
+            <div class="mt-8">
+              <a href="https://ailyz.com" class="group inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute -top-6 -right-6 w-24 h-24 bg-indigo-100 rounded-full -z-10"></div>
+            <a href="https://ailyz.com" class="block p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+              {{ $logo := "/images/ailyz-logo.svg" }}
+              {{ with .Site.Params.allyzLogo }}
+                {{ $logo = . }}
+              {{ end }}
+              <img src="{{ $logo | relURL }}?v={{ now.Unix }}" alt="Ailyz logo" class="h-40 md:h-48 object-contain" loading="lazy" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="mt-8 md:mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 bg-white rounded-2xl p-6 md:p-10 shadow-lg ring-1 ring-emerald-100 border-t-4 border-emerald-400 transition hover:shadow-xl hover:-translate-y-0.5">
-      <div class="flex items-center justify-center md:justify-start">
-        <a href="https://reai.no" class="select-none" aria-label="ReAI">
-          {{ $reLogo := "/images/ReAI-logo.svg" }}
-          {{ with .Site.Params.reaiLogo }}
-            {{ $reLogo = . }}
-          {{ end }}
-          <img src="{{ $reLogo | relURL }}?v={{ now.Unix }}" alt="ReAI logo" class="h-40 md:h-48 lg:h-56 object-contain" loading="lazy" />
-        </a>
-      </div>
+  <!-- Save Time Section -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
       <div>
-        <h2 class="text-2xl md:text-3xl font-semibold">ReAI: AI first accounting system</h2>
-        <p class="text-gray-700 mt-2">ReAI automates all accounting tasks and integrates with the tax authorities, banks and more. Book-keeping, invoicing, reconciliation, you name it. We got it.</p>
-        <a href="https://reai.no" class="inline-flex items-center justify-center mt-4 rounded-md bg-emerald-600 text-white px-6 py-3 font-medium hover:bg-emerald-700 transition">Learn more</a>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">
+          Save time
+        </h2>
+        
+        <div class="relative bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div class="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-indigo-500"></div>
+          <div class="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-blue-500"></div>
+          
+          <p class="text-lg text-gray-700 text-center relative z-10 leading-relaxed">
+            <span>Your customer service agent only needs to look over the answer+action and accept it, we find that on our biggest customers, around </span><strong class="text-black">85% of AI decisions can be accepted without modification</strong><span>. The other 15% usually only need a slight modification to either text / action.</span>
+          </p>
+        </div>
       </div>
     </div>
+    
+    <style>
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -20px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+    </style>
   </section>
-  
 
   {{ end }}
